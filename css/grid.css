@@ -1,49 +1,34 @@
 @charset "utf-8";
-* {
-    box-sizing: border-box;
-}
-.container {
-    border: 10px solid teal;
-    display: grid;
-    /* grid-template-columns: 100px 100px 100px; */
-    /* grid-template-columns: repeat(4, 100px 50px); */
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: 50px 50px; */
-    grid-template-rows: repeat(2, minmax(50px, auto));
-    grid-template-areas: "item1 item1 . item5"
-                         "item2 item3 item4 item5";
-}
-/* class starts with "item */
-[class^="item"]  {
-    background: #ffc;
-    border: 1px solid blue;
-}
-/* move item3 class to given coordinate */
-.item3 {
-    /* grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 3;
-    grid-column-end: 4; */
-    
-    /* grid-row: 1/3;
-    grid-column: 3/4; */
 
-    /* grid-area: 1/3/3/5; */
-    /* grid-area: 2/1/3/2; */
+.container{
+  display: grid;
+  grid-template-columns: repeat(12, 65px);
+  grid-auto-rows: minmax(50px, auto);
+  grid-column-gap: 20px;
 }
-/* shift each element by one */
-.item1 {
-    grid-area: item1;    
+.header, .navigation, .main-content, .ad, .footer{
+  grid-column: 1/13;
 }
-.item2 {
-    grid-area: item2;    
+.header{
+  background-color: yellow;
+  grid-column: 3/13;
 }
-.item3 {
-    grid-area: item3;    
+.navigation{
+  background-color: lime;
+  grid-row: 2/6;
+  grid-column: 1/3;
 }
-.item4 {
-    grid-area: item4;    
+.main-content{
+  background-color: pink;
+  grid-row: 2/6;
+  grid-column: 3/11;
 }
-.item5 {
-    grid-area: item5;    
+.ad{
+  background-color: orange;
+  grid-row: 2/6;
+  grid-column: 11/13;
+}
+.footer{
+  background-color: skyblue;
+  grid-row: 6/7;
 }
